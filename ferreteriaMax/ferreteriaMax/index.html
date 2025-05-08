@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FerreMax</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo FerreMax" class="logo">
+            <h1>FerreMax</h1>
+        </div>
+        <div class="carrito-icono">
+            🛒 <span id="contador-carrito">0</span>
+        </div>
+    </header>
+    
+    <main>
+        <section id="catalogo" class="catalogo"></section>
+
+        <div id="modal-carrito" class="modal">
+            <div class="modal-contenido">
+                <h2>Tu Carrito</h2>
+                <ul id="lista-carrito"></ul>
+                <p>Total: $<span id="total-carrito">0</span></p>
+                <button id="pagar">Pagar</button>
+                <button id="cerrar-modal">Seguir Comprando</button>
+            </div>
+        </div>
+
+        <div id="modal-pago" class="modal">
+            <div class="modal-contenido">
+                <h2>Completa tu Compra</h2>
+                <form id="formulario-pago">
+                    <input type="text" placeholder="Nombre completo" required>
+                    <input type="text" placeholder="Número de tarjeta (16 dígitos)" pattern="\d{16}" required>
+                    <input type="text" placeholder="MM/AA" pattern="\d{2}/\d{2}" required>
+                    <input type="text" placeholder="CVV" pattern="\d{3}" required>
+                    <button type="submit">Confirmar Pago</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-contenido">
+            <div class="footer-seccion">
+                <h3>Contacto</h3>
+                <p><strong>Teléfono:</strong> (123) 456-7890</p>
+                <p><strong>Email:</strong> info@ferremax.com</p>
+                <p><strong>Dirección:</strong> Calle Principal #123, Ciudad</p>
+            </div>
+            <div class="footer-seccion">
+                <h3>Horario</h3>
+                <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                <p>Sábado: 9:00 AM - 2:00 PM</p>
+                <p>Domingo: Cerrado</p>
+            </div>
+            <div class="footer-seccion">
+                <h3>Redes Sociales</h3>
+                <div class="redes-sociales">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2023 FerreMax. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
