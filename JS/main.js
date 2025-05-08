@@ -1,6 +1,31 @@
 const { jsPDF } = window.jspdf;
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
+function inicializarInventario() {
+    if (!localStorage.getItem('inventario')) {
+        const inventarioInicial = [
+            {id: 1, nombre: "Martillo", precio: 15000, stock: 10, imagen: "img/martillo.jpg"},
+            {id: 2, nombre: "Destornillador", precio: 8000, stock: 15, imagen: "img/destornillador.jpg"},
+            {id: 3, nombre: "Taladro", precio: 120000, stock: 5, imagen: "img/taladro.jpg"},
+            {id: 4, nombre: "Ventilador", precio: 123, stock: 9, imagen: "img/ventilador.jpg"},
+            {id: 5, nombre: "Tubo de acero", precio: 986, stock: 82, imagen: "img/tubo-acero.jpg"},
+            {id: 6, nombre: "Guantes", precio: 200, stock: 78, imagen: "img/guantes.jpg"},
+            {id: 7, nombre: "Cascos", precio: 9600, stock: 50, imagen: "img/casco.jpg"},
+            {id: 8, nombre: "Alicates", precio: 100, stock: 45, imagen: "img/alicates.jpg"},
+            {id: 9, nombre: "Varillas", precio: 600, stock: 73, imagen: "img/varillas.jpg"},
+            {id: 10, nombre: "Tornillos c/u", precio: 0.50, stock: 5000, imagen: "img/tornillos.jpg"}
+        ];
+        localStorage.setItem('inventario', JSON.stringify(inventarioInicial));
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    inicializarInventario();
+    cargarCatalogo();
+    inicializarEventos();
+    actualizarCarrito();
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     cargarCatalogo();
     inicializarEventos();
